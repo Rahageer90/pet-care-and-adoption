@@ -1,0 +1,150 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+.header {
+  background-color: #3b5998;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Auth Container Styles */
+.auth-container {
+  max-width: 400px;
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #dddfe2;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3b5998;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+}
+
+.auth-container button {
+  background-color: #3b5998;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.auth-container button:hover {
+  background-color: #2d4373;
+}
+
+.auth-container .error {
+  color: #ff0000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Profile Container Styles */
+.profile-container {
+  max-width: 600px;
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #dddfe2;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3b5998;
+}
+
+.profile-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+}
+
+.profile-container button {
+  background-color: #3b5998;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.profile-container button:hover {
+  background-color: #2d4373;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+}
