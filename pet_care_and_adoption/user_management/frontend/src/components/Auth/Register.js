@@ -1,12 +1,9 @@
-// src/components/Auth/Register.js
-
 import React, { useState } from 'react';
-import api from './api';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,7 +14,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:8000/api/register', {
+            await axios.post('http://localhost:8000/register', {
                 name,
                 email,
                 password,
@@ -25,10 +22,10 @@ const Register = () => {
                 contact_number: contactNumber
             });
             // Automatically login after successful registration
-            const response = await axios.post('http://localhost:8000/api/login', { email, password });
-            localStorage.setItem('accessToken', response.data.access_token);
+            const response = await axios.post('http://localhost:8000/login', { email, password });
+            localStorage.setItem('accessToken', response.data.token);
             // Redirect or navigate to profile page after successful registration and login
-            history.push('/profile');
+            navigate('/profile');
         } catch (error) {
             setError(error.response.data.message);
         }

@@ -1,8 +1,6 @@
-// src/App.js or src/index.js
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './styles.css'; // Import your CSS file
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './styles.css'; 
 
 import Header from './components/Layout/Header';
 import Login from './components/Auth/Login';
@@ -16,12 +14,11 @@ function App() {
         <Header />
 
         <div className="container">
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/profile" component={Profile} />
-            {/* Add more routes as needed */}
-          </Switch>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
         </div>
       </div>
     </Router>

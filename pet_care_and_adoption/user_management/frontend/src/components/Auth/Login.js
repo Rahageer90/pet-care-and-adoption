@@ -1,23 +1,27 @@
-// src/components/Auth/Login.js
-
 import React, { useState } from 'react';
-import api from './api';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+/**
+ * Represents the Login component.
+ * @component
+ */
 const Login = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
+    /**
+     * Handles the form submission for login.
+     * @param {Event} e - The form submission event.
+     */
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/login', { email, password });
-            localStorage.setItem('accessToken', response.data.access_token);
-            // Redirect or navigate to profile page after successful login
-            history.push('/profile');
+            const response = await axios.post('http://localhost:8000/login', { email, password });
+            localStorage.setItem('accessToken', response.data.token);
+            navigate('/profile');
         } catch (error) {
             setError(error.response.data.message);
         }
